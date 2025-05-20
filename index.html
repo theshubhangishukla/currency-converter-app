@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Nexus Exchange Pro - Enterprise-Grade Currency Exchange Platform">
+    <title>Nexus Exchange Pro | Enterprise Currency Solutions</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="main-header">
+        <nav class="navbar">
+            <div class="brand">
+                <svg class="logo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+                </svg>
+                <div class="brand-text">
+                    <h1>Nexus Exchange</h1>
+                    <span class="brand-tag">Pro</span>
+                </div>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#dashboard">Dashboard</a></li>
+                <li><a href="#enterprise">Enterprise</a></li>
+                <li><a href="#api">API</a></li>
+                <li><button class="premium-btn">Go Premium</button></li>
+            </ul>
+            <div class="theme-toggle">
+                <button id="theme-toggle-btn" class="theme-btn" aria-label="Toggle theme">
+                    <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+                    </svg>
+                    <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="5" />
+                        <path
+                            d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" />
+                    </svg>
+                </button>
+            </div>
+
+        </nav>
+    </header>
+
+    <main class="converter-container">
+        <div class="converter-card">
+            <div class="card-header">
+                <h2>Real-Time Exchange</h2>
+                <span class="premium-badge">Enterprise</span>
+            </div>
+
+            <div class="input-group">
+                <div class="amount-wrapper">
+                    <label for="amount">Amount</label>
+                    <input type="number" id="amount" min="0.01" placeholder="Enter amount" step="0.01">
+                </div>
+                <div class="select-wrapper">
+                    <label for="base-currency">From</label>
+                    <select id="base-currency" class="currency-select">
+                        <option value="USD">USD</option>
+                    </select>
+                </div>
+            </div>
+
+            <button class="swap-btn" aria-label="Swap currencies">
+                <svg class="swap-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M7 16V4m0 0L3 8m4-4l4 4m6 4v12m0 0l4-4m-4 4l-4-4"/>
+                </svg>
+            </button>
+
+            <div class="input-group">
+                <div class="search-wrapper">
+                    <label for="target-currency">To</label>
+                    <input type="text" id="target-currency" placeholder="Search currency..." class="search-input">
+                </div>
+                <div class="select-wrapper">
+                    <label for="target-currency-select">Currency</label>
+                    <select id="target-currency-select" class="currency-select">
+                        <option value="EUR">EUR</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="results-container">
+                <div class="loading-spinner hidden"></div>
+                <div class="results-header">
+                    <h3>Market Rates</h3>
+                    <div class="refresh-btn">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M23 4v6h-6M1 20v-6h6M3.51 9a9 9 0 0114.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0020.49 15"/>
+                        </svg>
+                        <span>Auto-refresh</span>
+                    </div>
+                </div>
+                <table class="exchange-table">
+                    <thead>
+                        <tr>
+                            <th>Currency</th>
+                            <th>Code</th>
+                            <th>Rate</th>
+                            <th>Change</th>
+                        </tr>
+                    </thead>
+                    <tbody id="results-body"></tbody>
+                </table>
+            </div>
+
+            <div class="disclaimer">
+                <div class="update-info">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="10"/>
+                        <path d="M12 6v6l4 2"/>
+                    </svg>
+                    <span>Last updated: <time id="timestamp">-</time></span>
+                </div>
+                <p class="data-source">Enterprise-grade data by <a href="https://exchangerate-api.com" target="_blank">ExchangeRate-API</a></p>
+            </div>
+        </div>
+    </main>
+
+    <script src="main.js"></script>
+    <footer class="main-footer">
+        <div class="footer-content">
+            <div class="copyright">
+                <p>© 2025 Nexus Exchange Pro. All Rights Reserved.</p>
+                <p>Created by Shubhangi Shukla</p>
+            </div>
+            <div class="theme-toggle">
+                <button id="theme-toggle-btn" class="theme-btn" aria-label="Toggle theme">
+                    <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="5"/>
+                        <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>
+                    </svg>
+                    <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
