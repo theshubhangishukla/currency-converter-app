@@ -16,6 +16,9 @@ Enterprise-grade currency exchange platform with real-time market data.
 - Comprehensive error handling
 - Auto-refresh capability
 
+## 📸 Screenshots
+*screenshotnexus.png*
+
 ## Quick Start 🚀
 1. Obtain API key from [ExchangeRate-API](https://www.exchangerate-api.com)
 2. Clone repository
