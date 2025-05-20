@@ -16,9 +16,9 @@ Enterprise-grade currency exchange platform with real-time market data.
 - Comprehensive error handling
 - Auto-refresh capability
 
+
 ## 📸 Screenshots
-## 📸 Screenshots
-![Nexus Exchange Pro](path/to/screenshotnexus.png)
+![Nexus Exchange Pro](currency-converter-app/screenshotnexus.png)
 
 ## Quick Start 🚀
 1. Obtain API key from [ExchangeRate-API](https://www.exchangerate-api.com)
