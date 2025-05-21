@@ -1,4 +1,4 @@
-// Get free API key from: https://www.exchangerate-api.com/
+// free API key from: https://www.exchangerate-api.com/
 const API_KEY = '5c7d3200531ca41319273771'; 
 const BASE_URL = `https://v6.exchangerate-api.com/v6/5c7d3200531ca41319273771/latest/USD`;
 
@@ -10,9 +10,9 @@ const state = {
     targetCurrency: 'EUR'
 };
 
-// Theme management (place this near the top with your other state management)
 
-// Initialize theme (add this to your initialization function)
+
+
 function initializeTheme() {
     document.documentElement.setAttribute('data-theme', ({
             current: localStorage.getItem('theme') || 'light',
@@ -34,14 +34,14 @@ function initializeTheme() {
     });
 }
 
-// Update your initialization IIFE to include theme initialization
+
 (async () => {
     try {
         showLoading();
         await fetchRates();
         populateCurrencies();
         setupEventListeners();
-        initializeTheme(); // Add this line
+        initializeTheme(); 
         performConversion();
         startRateChangeSimulation();
     } catch (error) {
@@ -145,7 +145,7 @@ const theme = {
     }
 };
 
-// Initialize theme
+
 document.documentElement.setAttribute('data-theme', theme.current);
 
 }
@@ -200,7 +200,6 @@ function convertCurrency(amount, fromCurrency, toCurrency, rates) {
     const toRate = rates[toCurrency];
     return (amount / fromRate) * toRate;
 }
-// Add this function near your other utility functions
 function getRandomChange() {
     // Generate a random change between -2% and +2%
     const change = (Math.random() * 4 - 2).toFixed(2);
@@ -210,7 +209,7 @@ function getRandomChange() {
     };
 }
 
-// Replace your existing renderResults function with this one
+
 function renderResults(results) {
     elements.resultsBody.innerHTML = results
         .map(result => {
@@ -230,7 +229,7 @@ function renderResults(results) {
         }).join('');
 }
 
-// Add this function to simulate periodic rate changes
+
 function startRateChangeSimulation() {
     setInterval(() => {
         if (elements.resultsBody.children.length > 0) {
@@ -244,7 +243,7 @@ function startRateChangeSimulation() {
     }, 5000); // Update every 5 seconds
 }
 
-// Add this line to your initialization function (the async IIFE)
+
 (async () => {
     try {
         showLoading();
@@ -252,7 +251,7 @@ function startRateChangeSimulation() {
         populateCurrencies();
         setupEventListeners();
         performConversion();
-        startRateChangeSimulation(); // Add this line
+        startRateChangeSimulation(); 
     } catch (error) {
         showError(error);
     } finally {
@@ -261,7 +260,7 @@ function startRateChangeSimulation() {
 })();
 
 
-// Export for testing if in Node.js environment
+
 if (typeof module !== 'undefined' && module.exports) {
     module.exports = { convertCurrency };
 }
