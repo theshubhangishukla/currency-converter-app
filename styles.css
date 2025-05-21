@@ -1,4 +1,4 @@
-/* At the top of your CSS file */
+
 :root {
     --primary: #2563eb;
     --primary-light: #3b82f6;
@@ -13,7 +13,7 @@
     --gradient: linear-gradient(135deg, #2563eb, #1d4ed8);
 }
 
-/* Dark theme variables */
+
 [data-theme="dark"] {
     --primary: #60a5fa;
     --primary-light: #93c5fd;
@@ -56,7 +56,7 @@
     color: var(--text);
 }
 
-/* Hide/show appropriate icon based on theme */
+
 .sun-icon {
     display: none;
 }
@@ -468,7 +468,7 @@ input:focus {
     margin-bottom: 0.5rem;
 }
 
-/* Update change value styles */
+
 .change-value {
     display: inline-flex;
     align-items: center;
